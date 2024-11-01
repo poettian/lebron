@@ -144,7 +144,6 @@ service User {
   rpc Login(LoginRequest) returns(LoginResponse);
   //获取用户信息
   rpc UserInfo(UserInfoRequest) returns(UserInfoResponse);
-
   //添加收获地址
   rpc addUserReceiveAddress(UserReceiveAddressAddReq) returns(UserReceiveAddressAddRes);
   //编辑收获地址
