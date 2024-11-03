@@ -29,10 +29,20 @@ message LoginResponse {
 //用户登陆
 
 // 用户信息
+message AddUserReq {
+  string Username = 1;
+  string Password = 2;
+  string Phone = 3;
+  string Question = 4;
+  string Answer = 5;
+}
+message AddUserRes {
+  UserInfo user = 1;
+}
+
 message UserInfoRequest {
   int64 Id = 1;
 }
-
 message UserInfoResponse {
   UserInfo user = 1;
 }
@@ -142,8 +152,12 @@ message    UserReceiveAddressInfoReq {
 service User {
   //登录
   rpc Login(LoginRequest) returns(LoginResponse);
+
+  // 添加用户
+  rpc addUser(AddUserReq) returns(AddUserRes);
   //获取用户信息
   rpc UserInfo(UserInfoRequest) returns(UserInfoResponse);
+
   //添加收获地址
   rpc addUserReceiveAddress(UserReceiveAddressAddReq) returns(UserReceiveAddressAddRes);
   //编辑收获地址

@@ -1,6 +1,10 @@
 Name: user.rpc
 ListenOn: 0.0.0.0:8080
 Mode: dev
+CacheRedis:
+  Host: 127.0.0.1:6379
+  Type: cluster
+  Password: ""
 #Etcd:
 #  Hosts:
 #  - 127.0.0.1:2379
